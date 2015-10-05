@@ -31,7 +31,7 @@ using namespace boost;
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Litecoin cannot be compiled without assertions."
+# error "Logcoin cannot be compiled without assertions."
 #endif
 
 /**
@@ -73,7 +73,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Litecoin Signed Message:\n";
+const string strMessageMagic = "Logcoin Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -913,7 +913,7 @@ CAmount GetMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowF
             return 0;
     }
 
-    // Litecoin
+    // Logcoin
     // To limit dust spam, add 1000 byte penalty for each output smaller than DUST_THRESHOLD
     BOOST_FOREACH(const CTxOut& txout, tx.vout)
         if (txout.nValue < DUST_THRESHOLD)
@@ -1244,15 +1244,24 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex)
 
 CAmount GetBlockValue(int nHeight, const CAmount& nFees)
 {
-    CAmount nSubsidy = 50 * COIN;
-    int halvings = nHeight / Params().SubsidyHalvingInterval();
+    // Logarithmic decay formula smooths the halving of block rewards over time
+    // It implements the equation Pe^(rt), with r defined as ln(1/2)/halfLife
 
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 64)
-        return nFees;
+    // Under the current parameters:
+    // The total LOG produced will be 454968357.54966160 (~455 million)
+    // Block at height 104760325 (~200 years) will be the first to provide no subsidy other than transaction fees
 
-    // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
-    nSubsidy >>= halvings;
+    // Total coin production is different than the indefinite integral from 0 to infinity of the equation because of Satoshi rounding to 8 decimals
+    // The above values took this rounding into account
+
+    double initialReward = 100.0; // first block is worth 100 LOG
+    double halfLife = Params().SubsidyHalvingInterval(); // 6 years at a block per nTargetSpacing seconds
+
+    double result = initialReward * exp(((log(0.5)) / (halfLife)) * (nHeight)); // P(e)^((ln(1/2)/(h))(x)) where h is the half-life and x is the block height
+
+    CAmount nSubsidy = result * COIN; // truncates decimals more precise than a Satoshi
+
+    // printf("getBlockValue() at %i: %f before, %lld after\n", nHeight, result, nSubsidy);
 
     return nSubsidy + nFees;
 }
@@ -1647,7 +1656,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("litecoin-scriptch");
+    RenameThread("logcoin-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2546,7 +2555,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (pcheckpoint && nHeight < pcheckpoint->nHeight)
         return state.DoS(100, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
-    // Litecoin: Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
+    // Logcoin: Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
     bool enforceV2 = false;
     if (block.nVersion < 2)
     {
@@ -2590,7 +2599,7 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
             return state.DoS(10, error("%s : contains a non-final transaction", __func__), REJECT_INVALID, "bad-txns-nonfinal");
         }
 
-    // Litecoin: (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
+    // Logcoin: (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
     // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
     // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
     bool checkHeightMismatch = false;

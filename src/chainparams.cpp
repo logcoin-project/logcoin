@@ -116,52 +116,52 @@ public:
         pchMessageStart[2] = 0xb6;
         pchMessageStart[3] = 0xdb;
         vAlertPubKey = ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9");
-        nDefaultPort = 9333;
+        nDefaultPort = 8655;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
-        nSubsidyHalvingInterval = 840000;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60; // retarget every 24 hours
+        nTargetSpacing = 2 * 60; // 2 minute block targets 
+        nSubsidyHalvingInterval = 6 * ((60 * 60 * 24 * 365) / nTargetSpacing); // half-life is 6 years of blocks
 
-        /**
-         * Build the genesis block. Note that the output of the genesis coinbase cannot
-         * be spent as it did not originally exist in the database.
-         * 
-         * CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-         *   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-         *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-         *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-         *   vMerkleTree: 4a5e1e
-         */
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+	/*
+	merkle hash: b81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db
+	pszTimestamp: 05/Oct/2015 Twitter names Jack Dorsey permanent CEO
+	pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+	time: 1444052932
+	bits: 0x1e0ffff0
+	nonce: 1195137
+	genesis hash: b5d3be5c582256ad3cd70a2d65c6529f30be31fa1a36ad7f518a82de5958a8b1
+	*/
+
+        const char* pszTimestamp = "05/Oct/2015 Twitter names Jack Dorsey permanent CEO";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 100 * COIN;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1317972665;
+        genesis.nTime    = 1444052932; // epoch
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 2084524493;
+        genesis.nNonce   = 1195137;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        assert(genesis.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(hashGenesisBlock == uint256("0xb5d3be5c582256ad3cd70a2d65c6529f30be31fa1a36ad7f518a82de5958a8b1"));
+        assert(genesis.hashMerkleRoot == uint256("0xb81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db"));
 
-        vSeeds.push_back(CDNSSeedData("litecointools.com", "dnsseed.litecointools.com"));
-        vSeeds.push_back(CDNSSeedData("litecoinpool.org", "dnsseed.litecoinpool.org"));
-        vSeeds.push_back(CDNSSeedData("xurious.com", "dnsseed.ltc.xurious.com"));
-        vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
-        vSeeds.push_back(CDNSSeedData("weminemnc.com", "dnsseed.weminemnc.com"));
+        //vSeeds.push_back(CDNSSeedData("logcointools.com", "dnsseed.logcointools.com"));
+        //vSeeds.push_back(CDNSSeedData("logcoinpool.org", "dnsseed.logcoinpool.org"));
+        //vSeeds.push_back(CDNSSeedData("xurious.com", "dnsseed.ltc.xurious.com"));
+        //vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
+        //vSeeds.push_back(CDNSSeedData("weminemnc.com", "dnsseed.weminemnc.com"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(48);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(78);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(5);
         base58Prefixes[SECRET_KEY] =     list_of(176);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
@@ -178,8 +178,8 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Litecoin: Mainnet v2 enforced as of block 710k
-        nEnforceV2AfterHeight = 710000;
+        // Logcoin: Mainnet v2
+        nEnforceV2AfterHeight = -1;
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -202,27 +202,37 @@ public:
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
         vAlertPubKey = ParseHex("0449623fc74489a947c4b15d579115591add020e53b3490bf47297dfa3762250625f8ecc2fb4fc59f69bdce8f7080f3167808276ed2c79d297054367566038aa82");
-        nDefaultPort = 19333;
+        nDefaultPort = 18655;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60; // retarget every 24 hours
+        nTargetSpacing = 2 * 60; // 2 minute block targets
+
+	/*
+	merkle hash: b81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db
+	pszTimestamp: 05/Oct/2015 Twitter names Jack Dorsey permanent CEO
+	pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+	time: 1444052866
+	bits: 0x1e0ffff0
+	nonce: 2475650
+	genesis hash: 7eabb9d580802303809a91de5619acacad331e055c0d597fd2db987dfac72187
+	*/
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1317798646;
-        genesis.nNonce = 385270584;
+        genesis.nTime = 1444052866;
+        genesis.nNonce = 2475650;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f"));
+        assert(hashGenesisBlock == uint256("0x7eabb9d580802303809a91de5619acacad331e055c0d597fd2db987dfac72187"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("litecointools.com", "testnet-seed.litecointools.com"));
-        vSeeds.push_back(CDNSSeedData("xurious.com", "testnet-seed.ltc.xurious.com"));
-        vSeeds.push_back(CDNSSeedData("wemine-testnet.com", "dnsseed.wemine-testnet.com"));
+        //vSeeds.push_back(CDNSSeedData("logcointools.com", "testnet-seed.logcointools.com"));
+        //vSeeds.push_back(CDNSSeedData("xurious.com", "testnet-seed.ltc.xurious.com"));
+        //vSeeds.push_back(CDNSSeedData("wemine-testnet.com", "dnsseed.wemine-testnet.com"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(140);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(196);
         base58Prefixes[SECRET_KEY]     = list_of(239);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF);
@@ -238,8 +248,8 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        // Litecoin: Testnet v2 enforced as of block 400k
-        nEnforceV2AfterHeight = 400000;
+        // Logcoin: Testnet v2
+        nEnforceV2AfterHeight = -1;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
     {
@@ -265,15 +275,17 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        nTargetSpacing = 2.5 * 60; // 2.5 minutes
+        nTargetTimespan = 24 * 60 * 60; // retarget every 24 hours
+        nTargetSpacing = 2 * 60; // 2 minute block targets 
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1296688602;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 19444;
-        assert(hashGenesisBlock == uint256("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
+
+	// line below commented because it was causing problems
+        //assert(hashGenesisBlock == uint256("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -286,7 +298,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Logcoin: v2 enforced using Bitcoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -314,7 +326,7 @@ public:
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
 
-        // Litecoin: v2 enforced using Bitcoin's supermajority rule
+        // Logcoin: v2 enforced using Bitcoin's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
 

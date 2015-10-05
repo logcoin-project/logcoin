@@ -62,12 +62,12 @@
         <translation>Қабул қилинадиган манзиллар</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Улар тўловларни жўнатиш учун сизнинг Litecoin манзилларингиз. Доимо тангаларни жўнатишдан олдин сумма ва қабул қилувчи манзилни текшириб кўринг. </translation>
+        <source>These are your Logcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Улар тўловларни жўнатиш учун сизнинг Logcoin манзилларингиз. Доимо тангаларни жўнатишдан олдин сумма ва қабул қилувчи манзилни текшириб кўринг. </translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Улар тўловларни қабул қилиш учун сизнинг Litecoin манзилларингиз. Ҳар бир ўтказма учун янги қабул қилувчи манзилдан фойдаланиш тавсия қилинади.</translation>
+        <source>These are your Logcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Улар тўловларни қабул қилиш учун сизнинг Logcoin манзилларингиз. Ҳар бир ўтказма учун янги қабул қилувчи манзилдан фойдаланиш тавсия қилинади.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -160,8 +160,8 @@
         <translation>Ҳамённи кодлашни тасдиқлаш</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>Диққат: Агар сиз ҳамёнингизни кодласангиз ва махфий сўзингизни унутсангиз, сиз &lt;b&gt;БАРЧА LITECOIN ПУЛЛАРИНГИЗНИ ЙЎҚОТАСИЗ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LOGCOINS&lt;/b&gt;!</source>
+        <translation>Диққат: Агар сиз ҳамёнингизни кодласангиз ва махфий сўзингизни унутсангиз, сиз &lt;b&gt;БАРЧА LOGCOIN ПУЛЛАРИНГИЗНИ ЙЎҚОТАСИЗ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,8 +184,8 @@
         <translation>Ҳамёнга янги махфий сўз киритинг.&lt;br/&gt;Илтимос, &lt;b&gt;ўнта ёки тасодифий белгили&lt;/b&gt; махфий сўздан фойдаланинг ёки &lt;b&gt;саккизта ёки кўпроқ сўзлар&lt;/b&gt;дан фойдаланинг.</translation>
     </message>
     <message>
-        <source>Litecoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
-        <translation>Litecoin кодлаш жараёнини тугатиш учун ёпилади. Ёдда сақланг: ҳамёнингизни кодлаш компьютерингизни зарарлаган зарарли дастурлар томонидан litecoin тангаларингизни ўғирланишидан тўлиқ ҳимоя қила олмайди.</translation>
+        <source>Logcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your logcoins from being stolen by malware infecting your computer.</source>
+        <translation>Logcoin кодлаш жараёнини тугатиш учун ёпилади. Ёдда сақланг: ҳамёнингизни кодлаш компьютерингизни зарарлаган зарарли дастурлар томонидан logcoin тангаларингизни ўғирланишидан тўлиқ ҳимоя қила олмайди.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -291,8 +291,8 @@
         <translation>Интернет манзилни очиш</translation>
     </message>
     <message>
-        <source>Litecoin Core client</source>
-        <translation>Litecoin асос мижози</translation>
+        <source>Logcoin Core client</source>
+        <translation>Logcoin асос мижози</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
@@ -303,12 +303,12 @@
         <translation>Дискдаги блоклар қайта индексланмоқда...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Тангаларни Litecoin манзилига жўнатиш</translation>
+        <source>Send coins to a Logcoin address</source>
+        <translation>Тангаларни Logcoin манзилига жўнатиш</translation>
     </message>
     <message>
-        <source>Modify configuration options for Litecoin</source>
-        <translation>Litecoin учун мослаш танловларини ўзгартириш</translation>
+        <source>Modify configuration options for Logcoin</source>
+        <translation>Logcoin учун мослаш танловларини ўзгартириш</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -331,8 +331,8 @@
         <translation>Хабарни &amp;тасдиқлаш...</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Logcoin</source>
+        <translation>Logcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -347,8 +347,8 @@
         <translation>&amp;Қабул қилиш</translation>
     </message>
     <message>
-        <source>Show information about Litecoin Core</source>
-        <translation>Litecoin Core ҳақидаги маълумотларни кўрсатиш</translation>
+        <source>Show information about Logcoin Core</source>
+        <translation>Logcoin Core ҳақидаги маълумотларни кўрсатиш</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -363,12 +363,12 @@
         <translation>Ҳамёнингизга тегишли махфий калитларни кодлаш</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>Litecoin манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
+        <source>Sign messages with your Logcoin addresses to prove you own them</source>
+        <translation>Logcoin манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>Хабарларни махсус Litecoin манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
+        <source>Verify messages to ensure they were signed with specified Logcoin addresses</source>
+        <translation>Хабарларни махсус Logcoin манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -387,16 +387,16 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Logcoin Core</source>
+        <translation>Logcoin Core</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва litecoin ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and logcoin: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва logcoin ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
-        <source>&amp;About Litecoin Core</source>
-        <translation>Litecoin Core &amp;ҳақида</translation>
+        <source>&amp;About Logcoin Core</source>
+        <translation>Logcoin Core &amp;ҳақида</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -407,20 +407,20 @@
         <translation>Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Litecoin’ни очиш: URI ёки тўлов сўрови</translation>
+        <source>Open a logcoin: URI or payment request</source>
+        <translation>Logcoin’ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Буйруқлар сатри мосламалари</translation>
     </message>
     <message>
-        <source>Show the Litecoin Core help message to get a list with possible Litecoin command-line options</source>
-        <translation>Мавжуд Litecoin буйруқлар матни мосламалари билан  Litecoin Core ёрдам хабарларини олиш рўйхатини кўрсатиш</translation>
+        <source>Show the Logcoin Core help message to get a list with possible Logcoin command-line options</source>
+        <translation>Мавжуд Logcoin буйруқлар матни мосламалари билан  Logcoin Core ёрдам хабарларини олиш рўйхатини кўрсатиш</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litecoin network</source>
-        <translation><numerusform>%n та Litecoin тармоғига фаол уланиш мавжуд</numerusform></translation>
+        <source>%n active connection(s) to Logcoin network</source>
+        <translation><numerusform>%n та Logcoin тармоғига фаол уланиш мавжуд</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -768,8 +768,8 @@ Address: %4
         <translation>Киритилган "%1" манзили аллақачон манзил китобида.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Litecoin address.</source>
-        <translation>Киритилган "%1" манзили тўғри Litecoin манзили эмас.</translation>
+        <source>The entered address "%1" is not a valid Logcoin address.</source>
+        <translation>Киритилган "%1" манзили тўғри Logcoin манзили эмас.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -806,8 +806,8 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Logcoin Core</source>
+        <translation>Logcoin Core</translation>
     </message>
     <message>
         <source>version</source>
@@ -818,8 +818,8 @@ Address: %4
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Litecoin Core</source>
-        <translation>Litecoin Core ҳақида</translation>
+        <source>About Logcoin Core</source>
+        <translation>Logcoin Core ҳақида</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -853,16 +853,16 @@ Address: %4
         <translation>Хуш келибсиз</translation>
     </message>
     <message>
-        <source>Welcome to Litecoin Core.</source>
-        <translation>"Litecoin Core"га хуш келибсиз.</translation>
+        <source>Welcome to Logcoin Core.</source>
+        <translation>"Logcoin Core"га хуш келибсиз.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Litecoin Core will store its data.</source>
-        <translation>Биринчи марта дастур ишга тушгани каби сиз Litecoin Core маълумотларини жойлаштирадиган жойни танлашингиз мумкин.</translation>
+        <source>As this is the first time the program is launched, you can choose where Logcoin Core will store its data.</source>
+        <translation>Биринчи марта дастур ишга тушгани каби сиз Logcoin Core маълумотларини жойлаштирадиган жойни танлашингиз мумкин.</translation>
     </message>
     <message>
-        <source>Litecoin Core will download and store a copy of the Litecoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Litecoin Core юклаб олинади ва Litecoin блок занжири нусхаси жойлаштирилади. Камида %1GB  маълумот ушбу директорияга жойлаштирилади ва вақт давомида ўсиб боради. Ҳамён ҳам ушбу директорияда жойлашади.</translation>
+        <source>Logcoin Core will download and store a copy of the Logcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Logcoin Core юклаб олинади ва Logcoin блок занжири нусхаси жойлаштирилади. Камида %1GB  маълумот ушбу директорияга жойлаштирилади ва вақт давомида ўсиб боради. Ҳамён ҳам ушбу директорияда жойлашади.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -873,8 +873,8 @@ Address: %4
         <translation>Бошқа маълумотлар директориясида фойдаланинг:</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Logcoin Core</source>
+        <translation>Logcoin Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -919,12 +919,12 @@ Address: %4
         <translation>&amp;Асосий</translation>
     </message>
     <message>
-        <source>Automatically start Litecoin after logging in to the system.</source>
-        <translation>Тизимга киргандан сўнг Litecoin дастури автоматик ишга туширилсин.</translation>
+        <source>Automatically start Logcoin after logging in to the system.</source>
+        <translation>Тизимга киргандан сўнг Logcoin дастури автоматик ишга туширилсин.</translation>
     </message>
     <message>
-        <source>&amp;Start Litecoin on system login</source>
-        <translation>Тизимга кирганда Litecoin &amp;ишга туширилсин</translation>
+        <source>&amp;Start Logcoin on system login</source>
+        <translation>Тизимга кирганда Logcoin &amp;ишга туширилсин</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -991,8 +991,8 @@ Address: %4
         <translation>Фойдаланувчи интерфейси &amp;тили:</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Litecoin.</source>
-        <translation>Фойдаланувчи тили интерфесини шу ерда ўрнатиш мумкин. TУшбу созлама Litecoin қайта ишга туширилганда кучга киради.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Logcoin.</source>
+        <translation>Фойдаланувчи тили интерфесини шу ерда ўрнатиш мумкин. TУшбу созлама Logcoin қайта ишга туширилганда кучга киради.</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1042,8 +1042,8 @@ Address: %4
         <translation>Шакл</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Litecoin тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Logcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Logcoin тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1293,16 +1293,16 @@ Address: %4
         <translation>Тузатиш журнали файли</translation>
     </message>
     <message>
-        <source>Open the Litecoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Жорий махлумотлар директориясидан Litecoin тузатиш журнали файлини очинг. Бу катта журнал файллари учун бир неча сонияни олиши мумкин.</translation>
+        <source>Open the Logcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Жорий махлумотлар директориясидан Logcoin тузатиш журнали файлини очинг. Бу катта журнал файллари учун бир неча сонияни олиши мумкин.</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Терминални тозалаш</translation>
     </message>
     <message>
-        <source>Welcome to the Litecoin RPC console.</source>
-        <translation>Litecoin RPC терминлга хуш келибсиз.</translation>
+        <source>Welcome to the Logcoin RPC console.</source>
+        <translation>Logcoin RPC терминлга хуш келибсиз.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -1557,8 +1557,8 @@ Address: %4
         <translation>Тўлов миқдори 0. дан катта бўлиши керак. </translation>
     </message>
     <message>
-        <source>Warning: Invalid Litecoin address</source>
-        <translation>Диққат: Нотўғр Litecoin манзили</translation>
+        <source>Warning: Invalid Logcoin address</source>
+        <translation>Диққат: Нотўғр Logcoin манзили</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1637,8 +1637,8 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Logcoin Core</source>
+        <translation>Logcoin Core</translation>
     </message>
     <message>
         <source>The Bitcoin Core developers</source>
