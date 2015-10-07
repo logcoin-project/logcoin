@@ -130,10 +130,10 @@ public:
 	merkle hash: b81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db
 	pszTimestamp: 05/Oct/2015 Twitter names Jack Dorsey permanent CEO
 	pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
-	time: 1444150212
+	time: 1444184326
 	bits: 0x1e0ffff0
-	nonce: 87433
-	genesis hash: 1cd557b105b3fa4368ddc822243539aabd04c47e364341b13b7324735164f007
+	nonce: 12584
+	genesis hash: 5c4096500d4ae750b37a917db46a3e11a1aba7c92109350a106e4334f825151d
 	*/
 
         const char* pszTimestamp = "05/Oct/2015 Twitter names Jack Dorsey permanent CEO";
@@ -147,12 +147,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1444150212; // epoch
+        genesis.nTime    = 1444184326; // epoch
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 87433;
+        genesis.nNonce   = 12584;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x1cd557b105b3fa4368ddc822243539aabd04c47e364341b13b7324735164f007"));
+        assert(hashGenesisBlock == uint256("0x5c4096500d4ae750b37a917db46a3e11a1aba7c92109350a106e4334f825151d"));
         assert(genesis.hashMerkleRoot == uint256("0xb81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db"));
 
         //vSeeds.push_back(CDNSSeedData("logcointools.com", "dnsseed.logcointools.com"));
@@ -214,17 +214,17 @@ public:
 	merkle hash: b81e3df60aa8ecf4677bbfaa1fc12024731db880861d8e897b46151efc2846db
 	pszTimestamp: 05/Oct/2015 Twitter names Jack Dorsey permanent CEO
 	pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
-	time: 1444150220
+	time: 1444182740
 	bits: 0x1e0ffff0
-	nonce: 1496872
-	genesis hash: a57d0eec20fc15f5f40ecf35d2ffa7e83d2c6726d688ba988ca6d56f53ec4cb5
+	nonce: 1321925
+	genesis hash: df8827c0713f40e152bac2dc2846920fc1128e060057c6f6e426a956f94233c9
 	*/
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1444150220;
-        genesis.nNonce = 1496872;
+        genesis.nTime = 1444182740;
+        genesis.nNonce = 1321925;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xa57d0eec20fc15f5f40ecf35d2ffa7e83d2c6726d688ba988ca6d56f53ec4cb5"));
+        assert(hashGenesisBlock == uint256("0xdf8827c0713f40e152bac2dc2846920fc1128e060057c6f6e426a956f94233c9"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
